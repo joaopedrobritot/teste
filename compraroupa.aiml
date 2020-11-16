@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	<category>
+	    <pattern>* ROUPA</pattern>
+	    <template>
+	        <think><set name="rp">true</set></think>
+	        <think><set name="topic">roupa</set></think>
+	        <random>
+	            <li>Temos dois tipos: Camisa e Calça. Qual você quer?</li>
+	            <li>Temos dois produtos: Camisa e Calça. Qual você deseja?</li>
+	        </random>
+	        <button>Camisa</button>
+	        <button>Calça</button>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>ROUPA</pattern>
+	    <template>
+	        <srai>* ROUPA</srai>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>ERROROUPA</pattern>
+	    <template>
+	        Você quer uma calça? ou camisa? Não entendi bem!
+	        <srai>* ROUPA</srai>
+	    </template>
+	</category>
+
+<topic name="roupa">
+	<category>
+	    <pattern>PEDIDOFINALIZADOROUPA</pattern>
+	    <template>
+	        Seu pedido de uma <get name="roupa"></get> de tamanho <get name="tamanho"></get> e modelo <get name="tipo"></get> está sendo processado e logo será enviado. 😀 <br/><br/>
+	        Método de Pagamento: <get name="pagamento"></get><br></br>
+	    </template>
+	</category>
+</topic>
+</aiml>
